@@ -28,7 +28,95 @@ Quick">
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
-  
+
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Anaheim);
+        *{
+            margin:0;
+            padding:0;
+            outline:none;
+            border:none;
+            box-sizing:border-box;
+        }
+        *:before,
+        *:after{
+            box-sizing:border-box;
+        }
+        html,
+        body{
+            min-height: 100%;
+        }
+        body{
+            background-image:radial-gradient(mintcream 0%, lightgray 100%);
+        }
+        h1{
+            display: table;
+            margin: 5% auto 0;
+            text-transform: uppercase;
+            font-family:'Anaheim',sans-serif;
+            font-size:4em;
+            font-weight:400;
+            text-shadow:0 1px white, 0 2px black;
+        }
+        .container{
+            margin: 4% auto;
+            width: 200px;
+            height: 127px;
+            position: relative;
+            perspective: 1000px;
+        }
+        #carousel{
+            width:100%;
+            height:100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotation 20s infinite linear;
+        }
+        /* 规定鼠标停留则暂停动画 */
+        #carousel:hover{
+            animation-play-state: paused;
+        }
+
+        #carousel figure{
+            display:block;
+            position: absolute;/* 相对定位，这步后排成一排 */
+            width:200px;
+            height:127px;
+            left:20px;
+            top:20px;
+            background:black;
+            overflow:hidden;
+            border:solid 5px black;
+        }
+        #carousel figure:nth-child(1) { transform: rotateY(0deg) translateZ(288px);}
+        #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+        #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+        #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+        #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+        #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+        #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+        #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+        #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+        img{
+            -webkit-filter:grayscale(1);/* 设置对象的灰度 */
+            cursor:pointer;/* 光标显示为一只手 */
+            transition: all .5s ease;
+        }
+        img:hover{
+            -webkit-filter:grayscale(0);
+            transform:scale(1.2,1.2);
+        }
+        @keyframes rotation{
+            from{
+                transform:rotateY(0deg);
+            }
+            to{
+                transform:rotateY(360deg);
+            }
+        }
+
+    </style>
 
 </head>
 
@@ -82,6 +170,21 @@ Quick">
     <h1 class="article-title" itemprop="name">
       Hello World
     </h1>
+
+          <div class = "container">
+              <div id = "carousel">
+                  <figure><img src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2295338095,2126805890&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2207129260,994106139&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4235218428,3156271383&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2794468402,4236056731&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2430571581,53484664&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=63522195,1241401867&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1380907400,312022163&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4048084491,3215733499&fm=116&gp=0.jpg" alt=""></figure>
+                  <figure><img src = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=785127301,2074835516&fm=116&gp=0.jpg" alt=""></figure>
+
+              </div>
+          </div>
   
 
       </header>
